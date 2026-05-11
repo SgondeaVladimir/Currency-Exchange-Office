@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _2_1059_SGONDEA_VLADIMIR.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,8 +16,9 @@ namespace _2_1059_SGONDEA_VLADIMIR
         static void Main()
         {
             Application.EnableVisualStyles();
+            AppDomain.CurrentDomain.SetData("DataDirectory", Application.StartupPath);
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

@@ -15,7 +15,7 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
     public partial class ValuteForm : Form
     {
         private ValutaRepository repository;
-        private int idSelectat = 0; // Vom retine ID-ul randului selectat din tabel
+        private int idSelectat = 0; // Retin ID-ul randului selectat din tabel
 
         public ValuteForm()
         {
@@ -44,7 +44,6 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
             idSelectat = 0;
         }
 
-        // CLICK pe ADAUGA
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbCod.Text) || string.IsNullOrWhiteSpace(tbDenumire.Text))
@@ -60,7 +59,6 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
             IncarcaDate();
         }
 
-        // CLICK pe MODIFICA
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (idSelectat == 0)
@@ -76,7 +74,6 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
             IncarcaDate();
         }
 
-        // CLICK pe STERGE
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (idSelectat == 0)
