@@ -170,14 +170,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\CasierRepository.cs" />
     <Compile Include="DataAccess\ClientRepository.cs" />
+    <Compile Include="DataAccess\CursValutarRepository.cs" />
     <Compile Include="DataAccess\DatabaseHelper.cs" />
     <Compile Include="DataAccess\ValutaRepository.cs" />
+    <Compile Include="Forms\CasieriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CasieriForm.Designer.cs">
+      <DependentUpon>CasieriForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClientiForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ClientiForm.Designer.cs">
       <DependentUpon>ClientiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CursuriValutareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CursuriValutareForm.Designer.cs">
+      <DependentUpon>CursuriValutareForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -198,8 +212,14 @@
     <Compile Include="Models\Valuta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CasieriForm.resx">
+      <DependentUpon>CasieriForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientiForm.resx">
       <DependentUpon>ClientiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CursuriValutareForm.resx">
+      <DependentUpon>CursuriValutareForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

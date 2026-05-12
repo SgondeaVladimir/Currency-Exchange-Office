@@ -20,8 +20,7 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
         private void valuteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ValuteForm formValute = new ValuteForm();
-
-            // O deschidem ca fereastră de tip "Dialog" (utilizatorul nu poate da click pe fereastra principală până nu o închide pe aceasta)
+            // O deschidem ca fereastra de tip "Dialog" (utilizatorul nu poate da click pe fereastra principal pana nu o inchide pe asta)
             formValute.ShowDialog();
         }
 
@@ -29,6 +28,18 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
         {
             ClientiForm formClienti = new ClientiForm();
             formClienti.ShowDialog();
+        }
+
+        private void casieriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CasieriForm formCasieri = new CasieriForm();
+            formCasieri.ShowDialog();
+        }
+
+        private void cursuriValutareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CursuriValutareForm formCursuri = new CursuriValutareForm();
+            formCursuri.ShowDialog();
         }
     }
 }

@@ -80,6 +80,7 @@
             this.casieriToolStripMenuItem.Name = "casieriToolStripMenuItem";
             this.casieriToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.casieriToolStripMenuItem.Text = "Casieri";
+            this.casieriToolStripMenuItem.Click += new System.EventHandler(this.casieriToolStripMenuItem_Click);
             // 
             // tranzactiiToolStripMenuItem
             // 
@@ -92,6 +93,7 @@
             this.cursuriValutareToolStripMenuItem.Name = "cursuriValutareToolStripMenuItem";
             this.cursuriValutareToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
             this.cursuriValutareToolStripMenuItem.Text = "Cursuri Valutare";
+            this.cursuriValutareToolStripMenuItem.Click += new System.EventHandler(this.cursuriValutareToolStripMenuItem_Click);
             // 
             // MainForm
             // 
