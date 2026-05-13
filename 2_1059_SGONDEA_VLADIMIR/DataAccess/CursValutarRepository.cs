@@ -80,5 +80,32 @@ namespace _2_1059_SGONDEA_VLADIMIR.DataAccess
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public CursValutar GetCursCurent(int valutaId)
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                string query = "SELECT TOP 1 Id, ValutaId, DataCotatiei, CursCumparare, CursVanzare FROM CursuriValutare WHERE ValutaId = @ValutaId ORDER BY DataCotatiei DESC";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ValutaId", valutaId);
+
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new CursValutar
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            ValutaId = Convert.ToInt32(reader["ValutaId"]),
+                            DataCotatiei = Convert.ToDateTime(reader["DataCotatiei"]),
+                            CursCumparare = Convert.ToDecimal(reader["CursCumparare"]),
+                            CursVanzare = Convert.ToDecimal(reader["CursVanzare"])
+                        };
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

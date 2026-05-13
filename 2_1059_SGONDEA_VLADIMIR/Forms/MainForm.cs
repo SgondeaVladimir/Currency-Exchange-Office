@@ -41,5 +41,11 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
             CursuriValutareForm formCursuri = new CursuriValutareForm();
             formCursuri.ShowDialog();
         }
+
+        private void tranzactiiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TranzactiiForm formTranzactii = new TranzactiiForm();
+            formTranzactii.ShowDialog();
+        }
     }
 }

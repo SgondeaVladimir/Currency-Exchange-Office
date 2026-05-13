@@ -107,5 +107,7 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
                 tbVanzare.Text = row.Cells["CursVanzare"].Value.ToString();
             }
         }
+
+
     }
 }

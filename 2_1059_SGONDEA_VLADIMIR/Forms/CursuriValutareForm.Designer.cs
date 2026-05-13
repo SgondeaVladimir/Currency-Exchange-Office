@@ -36,6 +36,9 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursuri)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +58,7 @@
             this.cbValuta.FormattingEnabled = true;
             this.cbValuta.Location = new System.Drawing.Point(12, 78);
             this.cbValuta.Name = "cbValuta";
-            this.cbValuta.Size = new System.Drawing.Size(167, 24);
+            this.cbValuta.Size = new System.Drawing.Size(195, 24);
             this.cbValuta.TabIndex = 1;
             // 
             // dtpData
@@ -74,7 +77,7 @@
             // 
             // tbVanzare
             // 
-            this.tbVanzare.Location = new System.Drawing.Point(231, 100);
+            this.tbVanzare.Location = new System.Drawing.Point(231, 112);
             this.tbVanzare.Name = "tbVanzare";
             this.tbVanzare.Size = new System.Drawing.Size(100, 22);
             this.tbVanzare.TabIndex = 4;
@@ -109,11 +112,41 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(231, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Pret Cumparare";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(231, 137);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 16);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Pret Vanzare";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(194, 16);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Selecteaza o valuta disponibila";
+            // 
             // CursuriValutareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -141,5 +174,8 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
