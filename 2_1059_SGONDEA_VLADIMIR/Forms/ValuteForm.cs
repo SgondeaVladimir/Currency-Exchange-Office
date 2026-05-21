@@ -26,6 +26,7 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
         // Eveniment care se declanseaza cand se incarca fereastra
         private void ValuteForm_Load(object sender, EventArgs e)
         {
+            ThemeManager.AplicaTema(this);
             IncarcaDate();
         }
 

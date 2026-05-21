@@ -18,6 +18,7 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
 
         private void ClientiForm_Load(object sender, EventArgs e)
         {
+            ThemeManager.AplicaTema(this);
             IncarcaDate();
         }
 

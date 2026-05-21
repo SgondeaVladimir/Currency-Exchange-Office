@@ -20,6 +20,7 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
 
         private void CursuriValutareForm_Load(object sender, EventArgs e)
         {
+            ThemeManager.AplicaTema(this);
             IncarcaValuteInComboBox();
             IncarcaDate();
         }

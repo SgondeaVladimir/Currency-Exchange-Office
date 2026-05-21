@@ -20,7 +20,6 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
         private void valuteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ValuteForm formValute = new ValuteForm();
-            // O deschidem ca fereastra de tip "Dialog" (utilizatorul nu poate da click pe fereastra principal pana nu o inchide pe asta)
             formValute.ShowDialog();
         }
 
@@ -47,5 +46,18 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
             TranzactiiForm formTranzactii = new TranzactiiForm();
             formTranzactii.ShowDialog();
         }
+
+        private void dashboardgraficeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DashboardForm f = new DashboardForm();
+            f.ShowDialog();
+        }
+
+        private void temaIntunecataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemeManager.ModMatrixActiv = !ThemeManager.ModMatrixActiv;
+            ThemeManager.AplicaTema(this);
+        }
+        
     }
 }

@@ -53,7 +53,6 @@ namespace _2_1059_SGONDEA_VLADIMIR.DataAccess
                 cmd.Parameters.AddWithValue("@CasierId", tranzactie.CasierId);
                 cmd.Parameters.AddWithValue("@DataTranzactie", tranzactie.DataTranzactie);
                 cmd.Parameters.AddWithValue("@SumaValuta", tranzactie.SumaValuta);
-                // Salvam enum-ul ca text ("Cumparare" sau "Vanzare")
                 cmd.Parameters.AddWithValue("@Tip", (int)tranzactie.Tip);
                 cmd.Parameters.AddWithValue("@SumaTotalaLei", tranzactie.SumaTotalaLei);
 
@@ -94,6 +93,45 @@ namespace _2_1059_SGONDEA_VLADIMIR.DataAccess
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public Dictionary<string, int> GetStatisticiValute()
+        {
+            Dictionary<string, int> stats = new Dictionary<string, int>();
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                string query = @"SELECT v.Cod, COUNT(t.Id) as NrTranzactii 
+                        FROM Tranzactii t 
+                        JOIN Valute v ON t.ValutaId = v.Id 
+                        GROUP BY v.Cod";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                using (SqlDataReader r = cmd.ExecuteReader())
+                {
+                    while (r.Read()) stats.Add(r["Cod"].ToString(), Convert.ToInt32(r["NrTranzactii"]));
+                }
+            }
+            return stats;
+        }
+
+        public Dictionary<DateTime, decimal> GetEvolutieSaptamanala()
+        {
+            Dictionary<DateTime, decimal> evolutie = new Dictionary<DateTime, decimal>();
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                string query = @"SELECT CAST(DataTranzactie AS DATE) as Data, SUM(SumaTotalaLei) as Total 
+                        FROM Tranzactii 
+                        WHERE DataTranzactie >= DATEADD(day, -7, GETDATE())
+                        GROUP BY CAST(DataTranzactie AS DATE)
+                        ORDER BY Data";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                using (SqlDataReader r = cmd.ExecuteReader())
+                {
+                    while (r.Read()) evolutie.Add(Convert.ToDateTime(r["Data"]), Convert.ToDecimal(r["Total"]));
+                }
+            }
+            return evolutie;
         }
     }
 }

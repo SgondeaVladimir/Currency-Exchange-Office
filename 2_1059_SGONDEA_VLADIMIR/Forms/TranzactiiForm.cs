@@ -1,8 +1,9 @@
-﻿using System;
+﻿using _2_1059_SGONDEA_VLADIMIR.DataAccess;
+using _2_1059_SGONDEA_VLADIMIR.Models;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using _2_1059_SGONDEA_VLADIMIR.Models;
-using _2_1059_SGONDEA_VLADIMIR.DataAccess;
 
 namespace _2_1059_SGONDEA_VLADIMIR.Forms
 {
@@ -25,6 +26,7 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
 
         private void TranzactiiForm_Load(object sender, EventArgs e)
         {
+            ThemeManager.AplicaTema(this);
             IncarcaToateComboBoxurile();
             IncarcaDate();
         }
@@ -273,6 +275,58 @@ namespace _2_1059_SGONDEA_VLADIMIR.Forms
             if (chkFiltruData.Checked)
             {
                 AplicaFiltre();
+            }
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            if (dgvTranzactii.Rows.Count == 0)
+            {
+                MessageBox.Show("Nu există date în tabel pentru a fi exportate!", "Atenție");
+                return;
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Fișiere CSV (*.csv)|*.csv";
+            saveFileDialog.Title = "Exportă Raport Tranzacții";
+            saveFileDialog.FileName = $"Raport_Tranzactii_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+                    List<string> antet = new List<string>();
+                    foreach (DataGridViewColumn col in dgvTranzactii.Columns)
+                    {
+                        antet.Add(col.HeaderText);
+                    }
+
+                    sb.AppendLine(string.Join(";", antet));
+
+                    foreach (DataGridViewRow row in dgvTranzactii.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            List<string> celule = new List<string>();
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                string valoare = cell.Value != null ? cell.Value.ToString().Replace(";", " ") : "";
+                                celule.Add(valoare);
+                            }
+                            sb.AppendLine(string.Join(";", celule));
+                        }
+                    }
+
+                    System.IO.File.WriteAllText(saveFileDialog.FileName, sb.ToString(), System.Text.Encoding.UTF8);
+
+                    MessageBox.Show("Raportul curent a fost exportat cu succes în format Excel (.csv)!", "Succes");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"A apărut o eroare la salvarea raportului: {ex.Message}", "Eroare");
+                }
             }
         }
     }

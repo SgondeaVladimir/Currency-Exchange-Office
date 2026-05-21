@@ -36,8 +36,10 @@
             this.casieriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tranzactiiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursuriValutareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashboardgraficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.temaIntunecataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +50,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nomenclatoareToolStripMenuItem,
             this.tranzactiiToolStripMenuItem,
-            this.cursuriValutareToolStripMenuItem});
+            this.cursuriValutareToolStripMenuItem,
+            this.dashboardgraficeToolStripMenuItem,
+            this.temaIntunecataToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -68,21 +72,21 @@
             // valuteToolStripMenuItem
             // 
             this.valuteToolStripMenuItem.Name = "valuteToolStripMenuItem";
-            this.valuteToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.valuteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.valuteToolStripMenuItem.Text = "Valute";
             this.valuteToolStripMenuItem.Click += new System.EventHandler(this.valuteToolStripMenuItem_Click);
             // 
             // clientiToolStripMenuItem
             // 
             this.clientiToolStripMenuItem.Name = "clientiToolStripMenuItem";
-            this.clientiToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.clientiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.clientiToolStripMenuItem.Text = "Clienti";
             this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click);
             // 
             // casieriToolStripMenuItem
             // 
             this.casieriToolStripMenuItem.Name = "casieriToolStripMenuItem";
-            this.casieriToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.casieriToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.casieriToolStripMenuItem.Text = "Casieri";
             this.casieriToolStripMenuItem.Click += new System.EventHandler(this.casieriToolStripMenuItem_Click);
             // 
@@ -100,6 +104,13 @@
             this.cursuriValutareToolStripMenuItem.Text = "Cursuri Valutare";
             this.cursuriValutareToolStripMenuItem.Click += new System.EventHandler(this.cursuriValutareToolStripMenuItem_Click);
             // 
+            // dashboardgraficeToolStripMenuItem
+            // 
+            this.dashboardgraficeToolStripMenuItem.Name = "dashboardgraficeToolStripMenuItem";
+            this.dashboardgraficeToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.dashboardgraficeToolStripMenuItem.Text = "Dashboard (grafice)";
+            this.dashboardgraficeToolStripMenuItem.Click += new System.EventHandler(this.dashboardgraficeToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -114,11 +125,18 @@
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 426);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "Datele sunt actualizate in timp real. Sistemul este conectat la baza de date.";
+            // 
+            // temaIntunecataToolStripMenuItem
+            // 
+            this.temaIntunecataToolStripMenuItem.Name = "temaIntunecataToolStripMenuItem";
+            this.temaIntunecataToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+            this.temaIntunecataToolStripMenuItem.Text = "Tema Intunecata";
+            this.temaIntunecataToolStripMenuItem.Click += new System.EventHandler(this.temaIntunecataToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -151,5 +169,7 @@
         private System.Windows.Forms.ToolStripMenuItem cursuriValutareToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem dashboardgraficeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem temaIntunecataToolStripMenuItem;
     }
 }

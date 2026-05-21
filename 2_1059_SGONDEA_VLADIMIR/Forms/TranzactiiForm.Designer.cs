@@ -50,6 +50,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.chkFiltruData = new System.Windows.Forms.CheckBox();
             this.dtpFiltruData = new System.Windows.Forms.DateTimePicker();
+            this.btnExportExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTranzactii)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +101,7 @@
             // 
             // dtpData
             // 
-            this.dtpData.Location = new System.Drawing.Point(695, 7);
+            this.dtpData.Location = new System.Drawing.Point(530, 26);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(200, 22);
             this.dtpData.TabIndex = 5;
@@ -123,7 +124,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(558, 7);
+            this.btnAdd.Location = new System.Drawing.Point(762, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(84, 34);
             this.btnAdd.TabIndex = 8;
@@ -133,7 +134,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(558, 47);
+            this.btnEdit.Location = new System.Drawing.Point(762, 42);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(84, 37);
             this.btnEdit.TabIndex = 9;
@@ -143,7 +144,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(558, 90);
+            this.btnDelete.Location = new System.Drawing.Point(762, 85);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(84, 35);
             this.btnDelete.TabIndex = 10;
@@ -251,11 +252,23 @@
             this.dtpFiltruData.TabIndex = 21;
             this.dtpFiltruData.ValueChanged += new System.EventHandler(this.dtpFiltruData_ValueChanged);
             // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.BackColor = System.Drawing.Color.Lime;
+            this.btnExportExcel.Location = new System.Drawing.Point(442, 209);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(125, 53);
+            this.btnExportExcel.TabIndex = 22;
+            this.btnExportExcel.Text = "Exporta in Excel(.csv)";
+            this.btnExportExcel.UseVisualStyleBackColor = false;
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
+            // 
             // TranzactiiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 535);
+            this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.dtpFiltruData);
             this.Controls.Add(this.chkFiltruData);
             this.Controls.Add(this.label7);
@@ -311,5 +324,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox chkFiltruData;
         private System.Windows.Forms.DateTimePicker dtpFiltruData;
+        private System.Windows.Forms.Button btnExportExcel;
     }
 }
